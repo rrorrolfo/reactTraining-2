@@ -1,0 +1,40 @@
+/********* Colors ********/
+
+$yellow-color: rgb(244, 195, 69);
+$black-color: #302e30;
+$blue-color: #005ff2;
+$green-color: rgb(29, 167, 1);
+$red-color: rgb(190, 0, 0);
+$grey-color: rgb(219, 217, 217);
+$greyish: rgb(66, 71, 87);
+
+.App {
+  background-color: $greyish;
+  height: 100vh;
+  .text {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+  }
+}
+
+.productsContainer {
+  margin: 25px 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  .productButton {
+    height: 65px;
+    width: 85px;
+    background-color: $yellow-color;
+    border: $yellow-color;
+    color: $black-color;
+  }
+}
+
+.shoppingCart {
+  th,
+  tr {
+    color: white;
+    letter-spacing: 1.5px;
+  }
+}
