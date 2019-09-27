@@ -17,6 +17,28 @@ class App extends Component {
     this.setState({ products: [...products] });
   }
 
+  addItemToCart = code => {
+    const { products, itemsInCart } = this.state;
+    const productToAdd = products.filter(product => product.code === code);
+    this.setState(prevState => {
+      return {
+        itemsInCart: [...itemsInCart, ...productToAdd],
+        toPay: prevState.toPay + productToAdd[0].price
+      };
+    });
+  };
+
+  removeItemFromCart = (code, price) => {
+    const { itemsInCart } = this.state;
+    const updatedCart = itemsInCart.filter(product => product.code !== code);
+    this.setState(prevState => {
+      return {
+        itemsInCart: [...updatedCart],
+        toPay: prevState.toPay - price
+      };
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -25,6 +47,8 @@ class App extends Component {
           products={this.state.products}
           itemsInCart={this.state.itemsInCart}
           toPay={this.state.toPay}
+          addItemToCart={this.addItemToCart}
+          removeItemFromCart={this.removeItemFromCart}
         />
       </div>
     );

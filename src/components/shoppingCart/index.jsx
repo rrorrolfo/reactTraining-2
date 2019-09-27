@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 import Total from "../total";
 import TableBillRow from "../billRow";
 
-const ShoppingCart = ({ items, toPay }) => {
+const ShoppingCart = ({ items, toPay, removeItemFromCart }) => {
   return (
     <>
       <h1 className="text">Shopping Cart</h1>
@@ -11,10 +11,10 @@ const ShoppingCart = ({ items, toPay }) => {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Code</th>
-              <th>Qty</th>
-              <th>Price</th>
+              <th>NAME</th>
+              <th>CODE</th>
+              <th>QTY</th>
+              <th>PRICE</th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +24,8 @@ const ShoppingCart = ({ items, toPay }) => {
                 code={item.code}
                 qty={1}
                 price={item.price}
+                key={item.name}
+                removeItemFromCart={removeItemFromCart}
               />
             ))}
           </tbody>

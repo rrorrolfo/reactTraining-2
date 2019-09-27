@@ -2,7 +2,7 @@ import React from "react";
 import ProductButton from "../productButton";
 import { Container } from "react-bootstrap";
 
-const ProductsSelection = ({ products = [] }) => {
+const ProductsSelection = ({ products = [], addItemToCart }) => {
   return (
     <>
       <h1 className="text">Choose a product</h1>
@@ -12,6 +12,7 @@ const ProductsSelection = ({ products = [] }) => {
             name={product.name}
             code={product.code}
             key={product.code}
+            addItemToCart={addItemToCart}
           />
         ))}
       </Container>
