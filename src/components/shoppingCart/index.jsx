@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Table } from "react-bootstrap";
-
+import Total from "../total";
 import TableBillRow from "../billRow";
 
-const ShoppingCart = ({ items }) => {
+const ShoppingCart = ({ items, toPay }) => {
   return (
     <>
       <h1 className="text">Shopping Cart</h1>
@@ -28,6 +28,7 @@ const ShoppingCart = ({ items }) => {
             ))}
           </tbody>
         </Table>
+        <Total toPay={toPay} />
       </Container>
     </>
   );

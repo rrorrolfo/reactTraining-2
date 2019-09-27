@@ -3,11 +3,11 @@ import { Container } from "react-bootstrap";
 import ProductsSelection from "../productsSelection";
 import ShoppingCart from "../shoppingCart";
 
-const PosFrame = ({ products, itemsInCart }) => {
+const PosFrame = ({ products, itemsInCart, toPay }) => {
   return (
     <Container>
       <ProductsSelection products={products} />
-      <ShoppingCart items={itemsInCart} />
+      <ShoppingCart items={itemsInCart} toPay={toPay} />
     </Container>
   );
 };

@@ -24,6 +24,7 @@ class App extends Component {
         <PosFrame
           products={this.state.products}
           itemsInCart={this.state.itemsInCart}
+          toPay={this.state.toPay}
         />
       </div>
     );
