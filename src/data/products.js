@@ -15,9 +15,9 @@ const products = [
     price: 0.5
   },
   {
-    name: "Lettuce",
+    name: "Vodka",
     code: "871620",
-    price: 0.25
+    price: 10
   },
   {
     name: "Kohuke",

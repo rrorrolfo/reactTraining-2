@@ -3,7 +3,7 @@ import { Container, Table } from "react-bootstrap";
 
 import TableBillRow from "../billRow";
 
-const ShoppingCart = () => {
+const ShoppingCart = ({ items }) => {
   return (
     <>
       <h1 className="text">Shopping Cart</h1>
@@ -17,7 +17,16 @@ const ShoppingCart = () => {
               <th>Price</th>
             </tr>
           </thead>
-          <tbody>{/** rows here */}</tbody>
+          <tbody>
+            {items.map(item => (
+              <TableBillRow
+                name={item.name}
+                code={item.code}
+                qty={1}
+                price={item.price}
+              />
+            ))}
+          </tbody>
         </Table>
       </Container>
     </>

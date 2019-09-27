@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../components/header";
-import ProductsSelection from "../components/productsSelection";
-import ShoppingCart from "../components/shoppingCart";
+import PosFrame from "../components/posFrame";
 import products from "../data/products";
 
 import "../styles/app.scss";
@@ -9,7 +8,8 @@ import "../styles/app.scss";
 class App extends Component {
   state = {
     products: [],
-    itemsInCart: []
+    itemsInCart: [],
+    toPay: 0
   };
 
   componentDidMount() {
@@ -21,8 +21,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <ProductsSelection products={this.state.products} />
-        <ShoppingCart items={this.state.itemsInCart} />
+        <PosFrame
+          products={this.state.products}
+          itemsInCart={this.state.itemsInCart}
+        />
       </div>
     );
   }
