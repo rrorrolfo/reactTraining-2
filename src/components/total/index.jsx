@@ -5,7 +5,7 @@ const Total = ({ toPay }) => {
   return (
     <Container className="total-topay">
       <div style={{ marginRight: "15px" }}>TOTAL</div>
-      <div>{toPay}</div>
+      <div>{toPay.toFixed(2)}</div>
     </Container>
   );
 };
