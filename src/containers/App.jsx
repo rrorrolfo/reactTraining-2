@@ -40,6 +40,12 @@ class App extends Component {
   };
 
   render() {
+    /* const calculateTotal = () => {
+      const reducer = (accumulator, currentValue) =>
+        accumulator + currentValue.price;
+      const total = this.state.itemsInCart.reduce(reducer, 0);
+      return total;
+    }; */
     return (
       <div className="App">
         <NavBar />
